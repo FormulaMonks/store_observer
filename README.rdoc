@@ -1,0 +1,27 @@
+= StoreObserver
+
+Automatically expires cached fragments based on the state of the models involved.
+
+== Usage
+
+In any view:
+
+<% store 'fragment_name', :observe => [:users, :coments] do %>
+  cached fragment which does something intensive
+<% end %>
+
+This fragment will be cached until a save or destroy occur in the User and Comment models.
+
+== Installation
+
+You can install it as a Rails plugin or as a gem:
+
+  $ gem sources -a http://gems.github.com (you only have to do this once)
+  $ sudo gem install citrusbyte-store_observer
+
+== Contributors
+
+Michel Martens & Ben Alavi
+
+Copyright (c) 2008 CitrusByte, LLC (http://www.citrusbyte.com).
+Released under the MIT license.
