@@ -6,9 +6,9 @@ Automatically expires cached fragments based on the state of the models involved
 
 In any view:
 
-<% store 'fragment_name', :observe => [:users, :coments] do %>
-  cached fragment which does something intensive
-<% end %>
+  <% store 'fragment_name', :observe => [:users, :coments] do %>
+    cached fragment which does something intensive
+  <% end %>
 
 This fragment will be cached until a save or destroy occur in the User and Comment models.
 
