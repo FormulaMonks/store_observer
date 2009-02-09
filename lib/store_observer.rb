@@ -31,7 +31,6 @@ module ActionController
       def self.increment_counter_for(model)
         model_name = model.class.name.underscore
         store.write(model_name, counter = increment(store.read(model_name)))
-        trace "Incrementing counter for #{model.class.name}, counter is now at #{counter}"
       end
 
       def self.increment(value=nil)
@@ -70,10 +69,8 @@ module ActionController
         fragment_buffer = eval("_erbout", fragment_block.binding)
 
         if fragment = read_fragment(fragment_key)
-          trace "Fragment #{fragment_key} found"
           fragment_buffer.concat(fragment)
         else
-          trace "Fragment #{fragment_key} not found"
           position = fragment_buffer.length; fragment_block.call
           write_fragment(fragment_key, fragment_buffer[position..-1])
         end
