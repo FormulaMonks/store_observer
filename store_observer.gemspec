@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "store_observer"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.date = "2008-12-3"
   s.summary = "Automatic expiration of cached fragments"
   s.email = "michel.martens@citrusbyte.com"
